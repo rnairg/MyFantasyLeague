@@ -1,0 +1,18 @@
+<table *ngIf="res">
+<caption>Players Details</caption>
+<tr *ngFor="let player of res.players">
+<td>Player ID</td><td>{{player.id}}</td>
+</tr>
+<tr *ngFor="let player of res.players">
+<td>Player Name</td><td>{{player.name}}</td>
+</tr>
+<tr *ngFor="let player of res.players">
+<td>Player Category</td><td>{{player.category}}</td>
+</tr>
+</table>
+
+<table *ngIf="res">
+<tr>
+<td>Edit</td><td>Delete</td>
+</tr>
+</table>

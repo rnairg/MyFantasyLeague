@@ -1,0 +1,43 @@
+caption {
+	background-color: #555;
+	color: white;
+	padding: 10px;
+	align: center
+}
+
+th {
+	background-color: white;
+	color: black;
+}
+
+table, tr, td, th {
+	
+	text-align: left;
+	padding: 10px;
+	align: center
+	
+}
+
+tr a {
+	display: block;
+	padding: 8px 16px;
+	text-decoration: none;
+	
+}
+
+tr a:hover {
+	
+	display: block;
+	padding: 8px 16px;
+	background-color: #555;
+	color: white;
+}
+
+table {
+	width: 50%;
+	border-collapse: collapse;
+	border-bottom: 1px solid black;
+}
+tr {
+	
+}

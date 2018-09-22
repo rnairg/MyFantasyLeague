@@ -1,0 +1,10 @@
+
+<table *ngIf="res">
+<tr>
+<th>Player ID</th><th>Player Name</th><th>Actions</th>
+</tr>
+<tr *ngFor="let player of res.players">
+<td>{{player.id}}</td><td>{{player.name}}</td><a routerLink="/players/player/{{player.id}}"><td>View Details</td></a>
+</tr>
+
+</table>
