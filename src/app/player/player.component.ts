@@ -1,5 +1,4 @@
 import { RestService } from '../rest.service';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,15 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class PlayerComponent implements OnInit {
   res: any;
 
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private restService: RestService) {}
 
   ngOnInit() {
-    this.http.get('http://localhost:8080/players')
-    .subscribe((res) => {
+    this.restService.restCall('http://localhost:8080/players','get','')
+    .subscribe((res)=>{
       this.res = res;
-      console.log(this.res);
+      console.log("Test2:"+res);
     });
   }
 

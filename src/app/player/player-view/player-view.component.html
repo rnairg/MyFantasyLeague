@@ -1,18 +1,18 @@
-<table *ngIf="res">
-<caption>Players Details</caption>
-<tr *ngFor="let player of res.players">
-<td>Player ID</td><td>{{player.id}}</td>
-</tr>
-<tr *ngFor="let player of res.players">
-<td>Player Name</td><td>{{player.name}}</td>
-</tr>
-<tr *ngFor="let player of res.players">
-<td>Player Category</td><td>{{player.category}}</td>
-</tr>
-</table>
-
-<table *ngIf="res">
-<tr>
-<td>Edit</td><td>Delete</td>
-</tr>
-</table>
+<div *ngIf="res">
+        <div *ngFor="let player of res.players">
+                <h2>Player Details</h2>
+      <label for="id">ID</label>
+      <input type="text" class="form-control" id="id" 
+      required [disabled]=true
+      [(ngModel)]="player.id" name="id" #id="ngModel">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" 
+      required [disabled]=true
+      [(ngModel)]="player.name" name="name" #name="ngModel">
+      <label for="category">Category</label>
+      <input type="text" class="form-control" id="category" 
+      required [disabled]=true
+      [(ngModel)]="player.category" name="category" #category="ngModel">
+                <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+              </div>
+            </div>

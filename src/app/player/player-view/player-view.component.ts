@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { of } from 'rxjs';
+import {Player} from '../player'
 import { switchMap } from 'rxjs/operators';
 
 @Component({
@@ -11,7 +12,7 @@ import { switchMap } from 'rxjs/operators';
 })
 export class PlayerViewComponent implements OnInit {
   res: any;
-
+  //player = new Player(0,"","");
   id: any;
 
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient) {
@@ -31,6 +32,10 @@ export class PlayerViewComponent implements OnInit {
       this.res = res;
       console.log(this.res);
     });
+    //this.player.id=this.res.player.id;
+    //this.player.name=this.res.player.name;
+    //this.player.category=this.res.player.category;
+
   }
 
 }

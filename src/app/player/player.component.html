@@ -1,10 +1,14 @@
 
-<table *ngIf="res">
+<a routerLink="/players/add" class="btn btn-info">Add New Player</a>
+<br>
+<br>
+<table class="table table-hover" *ngIf="res">
 <tr>
 <th>Player ID</th><th>Player Name</th><th>Actions</th>
 </tr>
 <tr *ngFor="let player of res.players">
-<td>{{player.id}}</td><td>{{player.name}}</td><a routerLink="/players/player/{{player.id}}"><td>View Details</td></a>
+<td>{{player.id}}</td><td>{{player.name}}</td><td><a routerLink="/players/player/{{player.id}}" 
+    class="btn btn-info">View Details</a></td>
 </tr>
-
 </table>
+
