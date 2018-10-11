@@ -1,6 +1,7 @@
-<div class="container">
+<div>Form Componenet Works</div>
+<div class="container" *ngIf="addMode">
   <h1>Add New Player</h1>
-  <form (ngSubmit)="onSubmit()" #playerForm="ngForm">
+  <form #playerForm="ngForm">
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" id="name" 
@@ -23,6 +24,35 @@
       </div>
     </div>
 
-    <button type="submit"  class="btn btn-success" [disabled]="!playerForm.form.valid">Submit</button>
+    <button (click)="onAdd()"  class="btn btn-success" [disabled]="!playerForm.form.valid">Submit</button>
   </form>
+</div>
+
+<div *ngIf="viewMode || editMode">
+<div *ngIf="res">
+  <div *ngFor="let player of res.players">
+          <h2>Player Details</h2>
+<form #playerForm="ngForm">
+<label for="id">ID</label>
+<input type="text" class="form-control" id="id" 
+required [disabled]=true
+[(ngModel)]="player.id" name="id" #id="ngModel">
+<label for="name">Name</label>
+<input type="text" class="form-control" id="name" 
+required [disabled]="viewMode"
+[(ngModel)]="player.name" name="name" #name="ngModel">
+<label for="category">Category</label>
+<input type="text" class="form-control" id="category" 
+required [disabled]="viewMode"
+[(ngModel)]="player.category" name="category" #category="ngModel">
+<br>
+<div>
+    <button *ngIf="editMode" class="btn btn-success" [disabled]="!playerForm.form.valid" (click)="onSave()">Save</button>
+    <button *ngIf="viewMode" class="btn btn-info" (click)="onEdit()">Edit</button>
+    <button *ngIf="viewMode" class="btn btn-danger" (click)="onDelete()">Delete</button>
+    <button *ngIf="editMode" class="btn btn-warning" (click)="onCancelEdit()">Cancel</button>
+</div>
+</form>
+</div>
+</div>
 </div>

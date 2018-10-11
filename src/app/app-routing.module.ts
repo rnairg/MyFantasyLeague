@@ -7,8 +7,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path: 'players', component: PlayerComponent},
-  {path: 'players/player/:id', component: PlayerViewComponent},
-  {path: 'players/add', component: PlayerFormComponent}
+  {path: 'players/player/:id', component: PlayerFormComponent,
+  data:[{addMode:false},{viewMode:true}]},
+  {path: 'players/add', component: PlayerFormComponent,
+    data:[{addMode:true},{viewMode:false}]},
+    { path: '',
+    redirectTo: '/players',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({
