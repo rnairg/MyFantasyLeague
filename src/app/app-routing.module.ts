@@ -1,4 +1,3 @@
-import { PlayerViewComponent } from './player/player-view/player-view.component';
 import { PlayerComponent } from './player/player.component';
 import { PlayerFormComponent } from './player/player-form/player-form.component';
 
