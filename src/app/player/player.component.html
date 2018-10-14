@@ -4,7 +4,7 @@
 <br>
 <table class="table table-hover" *ngIf="res">
 <tr>
-<th>Player ID</th><th>Player Name</th><th>Actions</th>
+<th>Player ID</th><th>Player Name</th><th></th>
 </tr>
 <tr *ngFor="let player of res.players">
 <td>{{player.id}}</td><td>{{player.name}}</td><td><a routerLink="/players/player/{{player.id}}" 
